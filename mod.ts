@@ -8,7 +8,7 @@
  * ## Basic Usage
  *
  * ```typescript
- * import { pythonScript, python } from "@gnome/bash";
+ * import { pythonScript, python } from "@gnome/python-cli";
  *
  * const cmd = await pythonScript("print('Hello, World!')");
  * console.log(await cmd.text());
