@@ -3,7 +3,9 @@
     "version": "0.0.0",
     "exports": {
         ".": "./mod.ts",
-        "./python": "./python.ts"
+        "./python": "./python.ts",
+        "./pip": "./pip.ts",
+        "./poetry": "./poetry.ts"
     },
     "compilerOptions": {
         "lib": ["deno.worker"]
@@ -26,6 +28,8 @@
         "include": [
             "mod.ts",
             "python.ts",
+            "pip.ts",
+            "poetry.ts",
             "README.md",
             "LICENSE.md",
             "deno.json"

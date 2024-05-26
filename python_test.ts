@@ -1,12 +1,17 @@
 import { assert as ok, assertEquals as equals } from "jsr:@std/assert@^0.224.0";
 import { remove, writeTextFile } from "jsr:@gnome/fs@^0.1.0";
-import { python, pythonScript } from "./python.ts";
+import { pip, python, pythonScript } from "./mod.ts";
 
 const EOL = Deno.build.os === "windows" ? "\r\n" : "\n";
 
 Deno.test("python command test", async () => {
     const cmd = python(["-V"]);
     ok((await cmd.text()).startsWith("Python"));
+});
+
+Deno.test("pip command test", async () => {
+    const cmd = pip(["--version"]);
+    ok((await cmd.text()).startsWith("pip"));
 });
 
 Deno.test("simple inline test", async () => {

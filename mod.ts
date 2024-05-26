@@ -26,3 +26,4 @@
  * @module
  */
 export * from "./python.ts";
+export * from "./pip.ts";

@@ -6,8 +6,11 @@ import { makeTempFileSync, writeTextFileSync } from "@gnome/fs";
 pathFinder.set("python", {
     name: "python",
     windows: [
-        "${SystemDrive}\\Windows\\py.exe",
-        "${USERPROFILE}\\AppData\\Local\\Programs\\Python\\Launcher\\py.exe",
+        "${SystemDrive}\\Python312\\python.exe",
+        "${SystemDrive}\\Python311\\python.exe",
+        "${SystemDrive}\\Python310\\python.exe",
+        "${SystemDrive}\\Python39\\python.exe",
+        "${SystemDrive}\\Python38\\python.exe",
         "${ProgramFiles}\\Python312\\python.exe",
         "${ProgramFiles}\\Python311\\python.exe",
         "${ProgramFiles}\\Python310\\python.exe",
@@ -18,6 +21,8 @@ pathFinder.set("python", {
         "${USERPROFILE}\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
         "${USERPROFILE}\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
         "${USERPROFILE}\\AppData\\Local\\Programs\\Python\\Python38\\python.exe",
+        "${SystemDrive}\\Windows\\py.exe",
+        "${USERPROFILE}\\AppData\\Local\\Programs\\Python\\Launcher\\py.exe",
     ],
     linux: [
         "/usr/bin/python3",
@@ -30,7 +35,15 @@ pathFinder.set("python", {
  */
 export const PYTHON_EXT = ".py";
 
+/**
+ * Represents a Python command.
+ */
 export class PythonCommand extends Command {
+    /**
+     * Creates a new instance of the `PythonCommand` class.
+     * @param args The command arguments.
+     * @param options The command options.
+     */
     constructor(args?: CommandArgs, options?: CommandOptions) {
         super("python", args, options);
     }
@@ -92,6 +105,7 @@ export class PythonShellCommand extends ShellCommand {
         return params;
     }
 }
+
 /**
  * Executes the python command line using the PythonCommand class.
  *
