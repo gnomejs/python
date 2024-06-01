@@ -38,9 +38,9 @@ export const PYTHON_EXT = ".py";
 /**
  * Represents a Python command.
  */
-export class PythonCommand extends Command {
+export class PythonCliCommand extends Command {
     /**
-     * Creates a new instance of the `PythonCommand` class.
+     * Creates a new instance of the `PythonCliCommand` class.
      * @param args The command arguments.
      * @param options The command options.
      */
@@ -113,8 +113,8 @@ export class PythonShellCommand extends ShellCommand {
  * @param options The command options.
  * @returns a new instance of the PythonCommand class.
  */
-export function python(args?: CommandArgs, options?: CommandOptions): PythonCommand {
-    return new PythonCommand(args, options);
+export function pythonCli(args?: CommandArgs, options?: CommandOptions): PythonCliCommand {
+    return new PythonCliCommand(args, options);
 }
 
 /**
@@ -124,6 +124,6 @@ export function python(args?: CommandArgs, options?: CommandOptions): PythonComm
  * @param options - Optional options for the python shell command.
  * @returns A new instance of the PythonShellCommand class.
  */
-export function pythonScript(script: string, options?: ShellCommandOptions): PythonShellCommand {
+export function python(script: string, options?: ShellCommandOptions): PythonShellCommand {
     return new PythonShellCommand(script, options);
 }

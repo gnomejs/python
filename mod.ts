@@ -25,5 +25,5 @@
  * ```
  * @module
  */
-export * from "./python.ts";
-export * from "./pip.ts";
+export * from "./cli.ts";
+export * from "./pip/cli.ts";

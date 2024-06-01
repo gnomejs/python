@@ -1,11 +1,13 @@
 {
     "name": "@gnome/python-cli",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "exports": {
         ".": "./mod.ts",
-        "./python": "./python.ts",
-        "./pip": "./pip.ts",
-        "./poetry": "./poetry.ts"
+        "./cli": "./cli.ts",
+        "./pip": "./mod.ts",
+        "./pip/cli": "./pip/cli.ts",
+        "./poetry": "./poetry/mod.ts",
+        "./poetry/cli": "./poetry/cli.ts"
     },
     "compilerOptions": {
         "lib": ["deno.worker"]
@@ -27,16 +29,18 @@
     "publish": {
         "include": [
             "mod.ts",
-            "python.ts",
-            "pip.ts",
-            "poetry.ts",
+            "cli.ts",
+            "pip/cli.ts",
+            "pip/mod.ts",
+            "poetry/cli.ts",
+            "poetry/mod.ts",
             "README.md",
             "LICENSE.md",
             "deno.json"
         ]
     },
     "imports": {
-        "@gnome/exec": "jsr:@gnome/exec@^0.4.1",
+        "@gnome/exec": "jsr:@gnome/exec@^0.4.4",
         "@gnome/fs": "jsr:@gnome/fs@^0.1.0",
         "@gnome/os-constants": "jsr:@gnome/os-constants@^0.0.0",
         "@std/path": "jsr:@std/path@^0.225.1"
